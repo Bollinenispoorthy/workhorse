@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar-custom {
+      padding: 10px 20px;
+    }
+    .navbar-brand img {
+      width: 40px; /* Adjust the size of the logo image as needed */
+      margin-right: 10px;
+    } 
+    .banner {
+      position: relative;
+      background: url('images/s9.avif') no-repeat center center/cover;
+      height: 500px;
+      border-radius: 8px;
+    }
+    .banner-content {
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      color: white;
+    }
+    .banner h1, .banner h3, .banner p {
+      margin-bottom: 10px;
+    }
+    .explore-btn {
+      background-color: #007bff;
+      color: white;
+      text-transform: uppercase;
+    }
+    .box {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .box img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .box h5 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+    .main-heading {
+      margin-top: 20px;
+      text-align: center; /* Centering the heading */
+      font-weight: bold;
+    }
+    .content-container {
+      background-color: #f8f9fa; /* Light grey background */
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-between; /* Ensures content and image are aligned side by side */
+      align-items: center; /* Vertically center-align the items */
+    }
+    .content-container img {
+      max-width: 120px;
+      height: auto;
+      border-radius: 8px;
+    }
+    /* Ensure image and text stack properly on smaller screens */
+    @media (max-width: 768px) {
+      .content-container {
+        flex-direction: column; /* Stack the content vertically on smaller screens */
+        align-items: flex-start; /* Align text to the left */
+      }
+      .content-container img {
+        max-width: 100px; /* Adjust the image size on smaller screens */
+        margin-top: 15px; /* Space between the text and the image */
+      }
+    }
+    .container-custom {
+      background-color: hsla(17, 33%, 96%, 0.905); /* Black background */
+      padding: 50px 0; /* Add padding to the container */
+    }
+    .heading {
+      color: hwb(0 1% 99%); /* White color for the heading */
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .card1 { 
+      position: relative;
+      top: 5px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px hsla(0, 2%, 91%, 0.957);
+    }
+    .card1 img {
+      position: relative;
+      bottom: 20px;
+      height: 250px;
+      width: 250px;
+      width: 100%; /* Make the image responsive */
+      border-radius: 8px 8px 8px 8px; /* Rounded corners for the image */
+    }
+    .card1-body {
+      text-align: center;
+    }
+    .card1 h5 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+    .card1 h6 {
+      font-size: 1rem;
+      color: #6c757d;
+      margin-bottom: 20px;
+    }
+    .card1 button {
+      height: 40px;
+      width: 90px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 10px;
+      border-radius: 8px;
+      font-style:oblique ;
+    }
+    .card1 button:hover {
+      background-color: hsl(220, 12%, 95%);
+    }
+    /* Full Height Section with Centered Content */
+    .full-height {
+      position: relative;
+      bottom: 210px;
+      height: 100vh; /* Full height of the viewport */
+      display: flex;
+      justify-content: center; /* Centers content horizontally */
+      align-items: center; /* Centers content vertically */
+      text-align: center;
+      flex-direction: column;
+    }
+
+    /* Styling for the paragraph text */
+    .full-height p {
+      font-size: 1.1rem;
+    }
+
+    /* Card styling */
+    .card {
+      position: relative;
+      bottom: 480px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px hwb(0 5% 95% / 0.905);
+      text-align: center;
+    }
+
+    .card img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .card h5 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .card h6 {
+      font-size: 1rem;
+      color: #6c757d;
+    }
+    /* Box Container */
+    .box1 {
+        border: 1px solid #ddd;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .box1 img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .box1 h5 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .box1 p {
+        font-size: 14px;
+        color: #777;
+    }
+
+    /* Image size responsive */
+    .box1 img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+
+    /* Make sure the box sticks out of the image */
+    .box1-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f7f7f7;
+        z-index: -1;
+    }
+
+    /* Add hover effect on box */
+    .box1:hover {
+        transform: translateY(-5px); /* Subtle lifting effect */
+    }
+
+    /* Footer styling */
+.footer {
+  position: relative;
+  bottom: 380px;
+  background-color: hwb(90 94% 5%);
+  color: hsl(0, 0%, 1%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer section */
+.footer-section {
+  flex: 1;
+  margin: 1rem;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  color: hsl(0, 0%, 3%);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p, .footer-section ul {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-section ul li a {
+  color: #080808;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: rgb(2, 2, 2);
+}
+
+/* Social Media Icons */
+.footer-section.social a {
+  color: hsl(0, 0%, 3%);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.footer-section.social a:hover {
+  color: hsl(0, 0%, 2%);
+}
+
+/* Footer bottom text */
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: hsl(0, 0%, 2%);
+}
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+      <div class="container-fluid">
+        <!-- Logo and Brand Name -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="images/image.png" alt="Logo"> <!-- Replace "logo.png" with your image source -->
+          <span>work horse</span>
+        </a>
+        <!-- Toggler for mobile view -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">product</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactus.html">contact us</a>
+            </li>
+          </ul>
+          <!-- Search Button -->
+          <form class="d-flex ms-3">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid banner">
+      <div class="banner-content">
+        <h1 class="display-4">Welcome to Work horse!</h1>
+        <h3 class="fw-light">Your gateway to amazing experiences</h3>
+        <p>At work horse, we understand that your business’s success depends on the strength of the people behind it.</p>
+        <button class="btn explore-btn">Explore More</button>
+      </div>
+    </div>
+    <div class="container-fluid custom-container">
+      <div class="row">
+        <!-- Left Content -->
+        <div class="col-md-4 mb-4">
+          <h1 class="display-5 fw-bold">Welcome</h1>
+          <h3 class="fw-light">Explore Our Features!!</h3>
+        </div>
+  
+        <!-- Right Boxes -->
+        <div style="position: relative; bottom: 30px;"    class="col-md-8">
+          <div class="row">
+            <!-- Box 1 -->
+            <div class="col-md-4 col-sm-6 mb-3">
+              <div class="box">
+                <img src="images/s10.avif" alt="Logo 1">
+                <h5>Staffing Solutions</h5>
+                <p> Temporary, or contract staff,we deliver flexible staffing solutions that ensure the right people are in the right roles, at the right time.</p>
+              </div>
+            </div>
+            <!-- Box 2 -->
+            <div class="col-md-4 col-sm-6 mb-3">
+              <div class="box">
+                <img src="images/s11.avif" alt="Logo 2">
+                <h5>Recruitment Services</h5>
+                <p> We connect you with top-tier candidates through our rigorous screening process and industry expertise.</p>
+              </div>
+            </div>
+            <!-- Box 3 -->
+            <div class="col-md-4 col-sm-6 mb-3">
+              <div class="box">
+                <img src="images/s12.avif" alt="Logo 3">
+                <h5>Consultation Services</h5>
+                <p> We provide expert guidance on everything from workforce planning and hiring strategies to employee retention and organizational growth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- Main Heading -->
+  <h1 class="main-heading">Why Choose Us?</h1>
+  
+  <!-- Content Containers with Image on Right Side -->
+  <div class="container content-container">
+    <div>
+      <p class="fw-bold">Proven Expertise</p>
+      <p>
+        With 10+ years of experience in recruitment, staffing, and consultation, we’ve built a deep understanding of the job market and industry needs.
+      </p>
+    </div>
+    <img src="images/s13.avif" alt="Expertise Image">
+  </div>
+
+  <div class="container content-container">
+    <div>
+      <p class="fw-bold">Tailored Approach</p>
+      <p>
+        We take the time to understand your specific needs and create customized solutions that align with your company’s culture and goals.
+      </p>
+    </div>
+    <img src="images/s14.avif" alt="Tailored Approach Image">
+  </div>
+
+  <div class="container content-container">
+    <div>
+      <p class="fw-bold">Quality Talent</p>
+      <p>
+        Our extensive network of pre-screened candidates means we can quickly connect you with high-quality talent that fits your job requirements.
+      </p>
+    </div>
+    <img src="images/s15.avif" alt="Quality Talent Image">
+  </div>
+
+  <div class="container content-container">
+    <div>
+      <p class="fw-bold">Long-Term Success</p>
+      <p>
+        We’re committed to providing solutions that help you not only fill positions but build teams that will thrive and grow with your business.
+      </p>
+    </div>
+    <img src="images/s16.avif" alt="Long-Term Success Image">
+  </div>
+  <!-- Container with Black Background -->
+  <div class="container-fluid container-custom">
+    <div class="container">
+      <!-- Heading -->
+      <h1 class="heading">Our Amazing Features</h1>
+
+      <!-- Cards Row -->
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="card1">
+            <img src="images/s18.avif" alt="Card 1">
+            <div class="card-body">
+              <h5 class="card-title">Staffing Solutions</h5>
+              <h6 class="card-subtitle mb-2">Flexible staffing options for businesses in need of temporary, contract, or permanent employees. We help you fill positions quickly and with the right talent.</h6>
+              <button style="position: relative;bottom: 0px;" >More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col">
+          <div class="card1">
+            <img src="images/s 19.avif" alt="Card 2">
+            <div class="card-body">
+              <h5 class="card-title">Recruitment Services</h5>
+              <h6 class="card-subtitle mb-2">  
+                Our experts provide strategic hiring and workforce planning advice, helping you streamline your processes and improve employee retention and performance.
+              </h6>
+              <button style="position: relative;bottom: 0px;">More</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col">
+          <div class="card1">
+            <img src="images/s20.avif" alt="Card 3">
+            <div class="card-body">
+              <h5 class="card-title">consultation Services</h5>
+              <h6 class="card-subtitle mb-2">  
+                Our experts provide strategic hiring and workforce planning advice, helping you streamline your processes and improve employee retention and performance.
+              </h6>
+              <button style="position: relative;bottom: 0px;">More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Full-height container with centered content -->
+  <div class="container-fluid full-height">
+    <h1>Industries We Serve</h1>
+    <p>We have experience working with a wide variety of industries, including:</p>
+  </div>
+
+  <!-- Card Grid Section -->
+  <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="card">
+          <img src="images/law.avif" class="card-img-top" alt="Legal & Compliance">
+          <h5 class="card-title">Legal & Compliance</h5>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col">
+        <div class="card">
+          <img src="images/industry.avif" class="card-img-top" alt="Manufacturing">
+          <h5 class="card-title">Manufacturing</h5>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col">
+        <div class="card">
+          <img src="images/finance.avif" class="card-img-top" alt="Finance & Accounting">
+          <h5 class="card-title">Finance & Accounting</h5>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col">
+        <div class="card">
+          <img src="images/it.avif" class="card-img-top" alt="IT & Technology">
+          <h5 class="card-title">IT & Technology</h5>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col">
+        <div class="card">
+          <img src="images/retail.avif" class="card-img-top" alt="Retail & Hospitality">
+          <h5 class="card-title">Retail & Hospitality</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--contact container-->
+  <div style="position: relative; bottom: 400px;" class="container mt-5 p-4 border rounded" style="height: 100px;">
+    <div class="row align-items-center h-100">
+        <!-- Left Section: Heading and Subheading -->
+        <div class="col-12 col-md-8">
+            <h1 class="display-4">Work horse Reviews</h1>
+            <p class="lead">1000+ Reviews</p>
+        </div>
+        <!-- Right Section: Button -->
+        <div class="col-12 col-md-4 text-md-right mt-3 mt-md-0">
+            <button class="btn btn-primary">Review Us!</button>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <!-- Review Box 1 -->
+        <div  style="position: relative; bottom: 400px;"  class="col-12 col-md-3 mb-4">
+            <div class="p-4 border rounded text-center h-100">
+                <!-- Review Stars -->
+                <p class="text-warning">★★★★★</p>
+
+                <!-- Main Heading -->
+                <h4>Sunitha</h4>
+
+                <!-- Logo Image -->
+                <img src="images/s21.avif" alt="Logo" class="mb-3" style="height: 30px; width: 30px;">
+
+                <!-- Secondary Heading -->
+                <h5>10 June</h5>
+
+                <!-- Content Section -->
+                <p class="text-muted" style="font-size: 12px;">Comprehensive farm management, integrates well with Trimble hardware, data-driven insights</p>
+
+                <!-- Read More Button -->
+                <button class="btn btn-primary mb-3">Read More</button>
+            </div>
+        </div>
+
+        <!-- Review Box 2 -->
+        <div style="position: relative; bottom: 400px;"   class="col-12 col-md-3 mb-4">
+            <div class="p-4 border rounded text-center h-100">
+                <p class="text-warning">★★★★★</p>
+                <h4>Deepak</h4>
+                <img src="images/s23.jpg" alt="Logo" class="mb-3" style="height: 30px; width: 30px;">
+                <h5>11 July</h5>
+                <p class="text-muted" style="font-size: 12px;">I was very impressed it Reduces chemical use, autonomous operation, cost savings on</p>
+                <button class="btn btn-primary mb-3">Read More</button>
+            </div>
+        </div>
+
+        <!-- Review Box 3 -->
+        <div style="position: relative; bottom: 400px;"  class="col-12 col-md-3 mb-4">
+            <div class="p-4 border rounded text-center h-100">
+                <p class="text-warning">★★★★★</p>
+                <h4>Spoorthy</h4>
+                <img src="images/s22.avif" alt="Logo" class="mb-3" style="height: 30px; width: 30px;">
+                <h5>11 October</h5>
+                <p class="text-muted" style="font-size: 12px;">Easy to use, reliable, highly customizable, great customer service.</p>
+                <button class="btn btn-primary mb-3">Read More</button>
+            </div>
+        </div>
+
+        <!-- Review Box 4 -->
+        <div style="position: relative; bottom: 400px;"    class="col-12 col-md-3 mb-4">
+            <div class="p-4 border rounded text-center h-100">
+                <p class="text-warning">★★★★★</p>
+                <h4>Subbu</h4>
+                <img src="images/s24.avif" alt="Logo" class="mb-3" style="height: 30px; width: 30px;">
+                <h5>1 December</h5>
+                <p class="text-muted" style="font-size: 12px;">Real-time data access, intuitive app, detailed reports</p>
+                <button class="btn btn-primary mb-3">Read More</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container text-center my-5" style="background-color: #f7f7f7; height: 400px; position: relative;bottom: 400px;">
+    <!-- Main Heading -->
+    <h1 class="mt-3" style="font-size: 22px;">Still need help?</h1>
+    
+    <!-- Subheading -->
+    <p class="lead">Reach out to the community and contact us for more details</p>
+
+    <!-- Two Boxes -->
+    <div class="row mt-4">
+        <div class="col-12 col-md-6 mb-4">
+            <div class="d-flex align-items-start">
+                <!-- Logo Image in the left corner -->
+                <img src="images/s26.avif" alt="Logo 1" class="logo" style="height: 30px; width: 30px;">
+                <div>
+                    <!-- Box Heading -->
+                    <h4>Ask the Community</h4>
+                    <!-- Box Subheading -->
+                    <p>Join our community to connect, learn, and grow together! Discover new opportunities, share your insights, and be part of something impactful.</p>
+                    <!-- Box Text -->
+                    <h6 class="text-primary">Go to community</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4">
+            <div class="d-flex align-items-start">
+                <!-- Logo Image in the left corner -->
+                <img src="images/s25.avif" alt="Logo 2" class="logo" style="height: 30px; width: 30px;">
+                <div>
+                    <!-- Box Heading -->
+                    <h4>Contact Us</h4>
+                    <!-- Box Subheading -->
+                    <p>Got questions or need assistance? Reach out to us through our contact form or email, and our team will be happy to help you!</p>
+                    <!-- Box Text -->
+                    <h4 class="text-primary" style="font-size: 15px;">Get in Touch</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    <!-- Footer section -->
+    <footer class="footer">
+    <div class="footer-content">
+       <!-- Company Information -->
+       <div class="footer-section about">
+        <h3>About Work Horse</h3>
+        <p>Work Horse is dedicated to transforming agriculture with sustainable practices and innovative solutions. Join us in building a better future for farming and food security.</p>
+      </div>
+      <!-- Useful Links -->
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Social Media Links -->
+      <div class="footer-section social">
+        <h3>Follow Us</h3>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <!-- Footer bottom section -->
+    <div class="footer-bottom">
+      &copy; 2024 Work Horse | All Rights Reserved
+    </div>
+  </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+    
+

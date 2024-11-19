@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar-custom {
+      padding: 10px 20px;
+    }
+    .navbar-brand img {
+      width: 40px; /* Adjust the size of the logo image as needed */
+      margin-right: 10px;
+    }
+    .banner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    background: url('images/s6.avif') center center / cover no-repeat;
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
+    color: white;
+    text-align: center;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner-content h1 {
+    color: chartreuse;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .banner-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .banner-container {
+      height: 300px;
+    }
+
+    .banner-content h1 {
+      font-size: 2rem;
+    }
+
+    .banner-content p {
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+    .custom-underline {
+            width: 150px;
+            height: 5px;
+            background-color: hsl(110, 92%, 49%); /* Line color */
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        .full-width-image {
+            width: 100%;
+            max-width: 1300px; /* Limits image width */
+            height: 300px; /* Sets fixed height */
+            object-fit: cover; /* Ensures the image covers the container */
+        }
+         /* Footer styling */
+.footer {
+  background-color: hwb(90 94% 5%);
+  color: hsl(0, 0%, 1%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer section */
+.footer-section {
+  flex: 1;
+  margin: 1rem;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  color: hsl(0, 0%, 3%);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p, .footer-section ul {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-section ul li a {
+  color: #080808;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: rgb(2, 2, 2);
+}
+
+/* Social Media Icons */
+.footer-section.social a {
+  color: hsl(0, 0%, 3%);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.footer-section.social a:hover {
+  color: hsl(0, 0%, 2%);
+}
+
+/* Footer bottom text */
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: hsl(0, 0%, 2%);
+}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+  <div class="container-fluid">
+    <!-- Logo and Brand Name -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/image.png" alt="Logo"> <!-- Replace "logo.png" with your image source -->
+      <span>Work horse</span>
+    </a>
+    
+    <!-- Toggler for mobile view -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactus.html">Contact Us</a>
+        </li>
+      </ul>
+      <!-- Search Button -->
+      <form class="d-flex ms-3">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="banner-container mt-4">
+  <div class="overlay"></div> <!-- Color overlay -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center banner-content">
+        <h1 class="display-4">Contact Us</h1>
+        <p class="lead">Empowering Businesses with the Right Talent and Strategic Solutions for Sustainable Growth.</p>
+        <button class="btn btn-primary mt-3" style="background-color: chartreuse;">Contact us</button>
+      </div>
+    </div>
+  </div>
+  <!-- The rest of your styles -->
+</div>
+<div class="container my-5">
+  <div class="row">
+      <!-- Left Side Form Container -->
+      <div class="col-md-7">
+          <h3>Main Heading</h3>
+          <div class="custom-underline"></div> <!-- Horizontal Line -->
+
+          <!-- Form Start -->
+          <form>
+              <!-- First Section -->
+              <h5>First Name</h5>
+              <textarea style="height: 30px; width: 200px;" class="form-control mb-3" rows="4" placeholder="first name"></textarea>
+
+              <!-- Last Name Section -->
+              <h5>Last Name</h5>
+              <textarea style="height: 30px; width: 200px;" class="form-control mb-3" rows="4" placeholder="last name"></textarea>
+
+              <!-- Additional Headings and Buttons -->
+              <h5>email</h5>
+              <textarea style="height: 30px; width: 200px;" class="form-control mb-3" rows="4" placeholder="email id"></textarea>
+              <h5>subject</h5>
+              <textarea style="height: 30px; width: 200px;" class="form-control mb-3" rows="4" placeholder="subject"></textarea>
+
+              <!-- Your Message Section -->
+              <h5>Your Message</h5>
+              <textarea class="form-control mb-3" rows="4" placeholder="Type your message here..."></textarea>
+
+              <!-- Submit Button -->
+              <button  style="background-color: chartreuse;" type="submit" class="btn btn-primary">Submit Form</button>
+          </form>
+      </div>
+
+      <!-- Right Side Contact Information Container -->
+      <div class="col-md-5">
+          <h3>Contact Information</h3>
+          <h6 class="text-muted mb-3">Work Horse Solutions</h6>
+
+          <p><strong>Email:</strong> whrs@gmail.com</p>
+          <p><strong>Phone Number:</strong> +1 234 567 890</p>
+
+          <!-- Reach Office Button -->
+          <button style="background-color: chartreuse; color: aliceblue;" type="button" class="btn btn-outline-primary mt-3">Reach at Office</button>
+      </div>
+  </div>
+</div>
+<div class="container my-5 d-flex justify-content-center">
+  <img src="images/bs21.avif" class="full-width-image" alt="Full Width Image"> <!-- Replace with your image URL -->
+</div>
+<!-- Footer section -->
+<footer class="footer">
+  <div class="footer-content">
+    <!-- Company Information -->
+    <div class="footer-section about">
+      <h3>About Work Horse</h3>
+      <p>Work Horse is dedicated to transforming agriculture with sustainable practices and innovative solutions. Join us in building a better future for farming and food security.</p>
+    </div>
+
+    <!-- Useful Links -->
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <!-- Footer bottom section -->
+  <div class="footer-bottom">
+    &copy; 2024 Work Horse | All Rights Reserved
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
